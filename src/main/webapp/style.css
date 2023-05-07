@@ -16,7 +16,8 @@ h1 {
 img#agenda {
     margin-left: -80px;
 }
-a.botao1 {
+
+.botao1 {
     text-decoration: none;
     background-color: #66bbff;
     padding: 5px 10px;
@@ -24,8 +25,29 @@ a.botao1 {
     font-size: 1.2em;
     font-weight: 700;    
     border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+.botao1:hover {
+    text-decoration: underline;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+.caixa1 {
+    width: 320px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #66bbff;
+    border-radius: 5px;
+}
+
+.caixa2 {   
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #66bbff;
+    border-radius: 5px;
 }
