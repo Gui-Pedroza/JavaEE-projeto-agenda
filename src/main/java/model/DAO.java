@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.sql.ResultSet;
 
 public class DAO {
 
@@ -56,5 +58,31 @@ public class DAO {
 			e.printStackTrace();
 		}
 
+	}
+	
+	// listar todos os contatos:
+	public ArrayList<JavaBeans> listarContatos() {
+		ArrayList<JavaBeans> listaContatos = new ArrayList<>();
+		String query = "select * from contatos order by nome";
+		try {
+			PreparedStatement pstm = conectar().prepareStatement(query);
+			ResultSet st = pstm.executeQuery();		
+			// iterar sobre as linhas da tabela até chegar na última linha da query:
+			while (st.next()) {
+				JavaBeans contato = new JavaBeans();
+				contato.setIdcon(st.getString(1));
+				contato.setNome(st.getString(2));
+				contato.setFone(st.getString(3));
+				contato.setEmail(st.getString(4));
+				listaContatos.add(contato);				
+			}
+			//encerra a conexão:
+			conectar().close();
+			return listaContatos;	
+		} catch (SQLException e) {			
+			e.printStackTrace();
+			return null;
+		}
+			
 	}
 }

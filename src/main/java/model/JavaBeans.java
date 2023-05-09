@@ -50,6 +50,12 @@ public class JavaBeans {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "idcon=" + idcon + ", nome=" + nome + ", fone=" + fone + ", email=" + email;
+	}
+	
 			
 	
 

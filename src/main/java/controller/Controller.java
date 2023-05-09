@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -35,7 +36,10 @@ public class Controller extends HttpServlet {
 
 	// listar contatos
 	protected void contatos(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.sendRedirect("agenda.jsp");
+		ArrayList<JavaBeans> lista = dao.listarContatos();
+		for (JavaBeans contato : lista) {
+			System.out.println(contato);
+		}
 	}
 	
 	// adicionar contato
@@ -48,6 +52,6 @@ public class Controller extends HttpServlet {
 		// invocar o método inserirContato() passando como parametro o objeto contato
 		dao.inserirContato(contato);
 		// redirecionar para a página agenda.jsp
-		response.sendRedirect("/main");
+		response.sendRedirect("main");
 	}
 }
