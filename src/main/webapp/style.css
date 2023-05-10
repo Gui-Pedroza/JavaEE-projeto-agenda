@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Srisakdi:wght@700&display=swap');
 
 body {
+    margin-left: 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;    
     font-weight: 400px;
@@ -50,4 +51,29 @@ a:hover {
     margin-bottom: 10px;
     border: 1px solid #66bbff;
     border-radius: 5px;
+}
+
+#caixa3 {
+	padding: 5px;
+    margin-bottom: 10px;
+    border: 3px solid #ff0000;    
+}
+
+table#agenda {
+    margin-top: 30px;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+th.listagem {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #66bbff;
+    color: #fff;
+}
+
+td.listagem {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
 }
