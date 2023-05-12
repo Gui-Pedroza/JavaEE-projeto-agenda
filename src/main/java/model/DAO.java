@@ -120,5 +120,16 @@ public class DAO {
 		}
 	}
 	
+	public void deletarContato(JavaBeans contato) {
+		String query = "delete from contatos where idcon=?";
+		try {
+			PreparedStatement pstm = conectar().prepareStatement(query);			
+			pstm.setString(1, contato.getIdcon());
+			pstm.executeUpdate();
+			conectar().close();
+		} catch (SQLException e) {
+			e.printStackTrace();			
+		}
+	}
 	
 }
